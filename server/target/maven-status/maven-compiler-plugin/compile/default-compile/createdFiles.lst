@@ -1,2 +1,8 @@
+com\example\project\config\CorsConfig.class
 com\example\project\Application.class
-main\java\com\example\project\controller\UserController.class
+com\example\project\repository\UserRepository.class
+com\example\project\service\UserService.class
+com\example\project\config\CorsConfig$1.class
+com\example\project\config\SecurityConfig.class
+com\example\project\entity\User.class
+com\example\project\controller\UserController.class
