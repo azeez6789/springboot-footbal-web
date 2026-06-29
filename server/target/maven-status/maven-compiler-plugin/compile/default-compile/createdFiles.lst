@@ -10,5 +10,4 @@ com\example\project\controller\TestController.class
 com\example\project\entity\PlayerProfile.class
 com\example\project\Application.class
 com\example\project\dto\LoginRequest.class
-com\example\project\config\CorsConfig$1.class
 com\example\project\controller\UserController.class
