@@ -10,7 +10,7 @@ import com.example.project.dto.LoginRequest;
 import com.example.project.entity.User;
 import com.example.project.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:5174") // ✅ temporary fix (safe for testing)
+@CrossOrigin(origins = "http://localhost:5175") // ✅ FIX CORS HERE
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -18,38 +18,29 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // ================= REGISTER =================
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) {
-        User createdUser = userService.registerUser(user);
-        return ResponseEntity.ok(createdUser);
+    public User register(@RequestBody User user) {
+        return userService.registerUser(user);
     }
 
-    // ================= LOGIN =================
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody LoginRequest request) {
         User user = userService.login(request);
         return ResponseEntity.ok(user);
     }
 
-    // ================= GET ALL USERS =================
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userService.getAllUsers();
-        return ResponseEntity.ok(users);
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
     }
 
-    // ================= UPDATE USER =================
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(
-            @PathVariable Long id,
+    public ResponseEntity<User> updateUser(@PathVariable Long id,
             @RequestBody User userDetails) {
-
         User updatedUser = userService.updateUser(id, userDetails);
         return ResponseEntity.ok(updatedUser);
     }
 
-    // ================= DELETE USER =================
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
