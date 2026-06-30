@@ -10,7 +10,7 @@ import com.example.project.dto.LoginRequest;
 import com.example.project.entity.User;
 import com.example.project.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:5174") // ✅ temporary fix (safe for testing)
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"})
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

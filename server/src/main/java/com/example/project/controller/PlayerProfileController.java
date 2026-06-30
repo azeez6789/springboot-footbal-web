@@ -12,7 +12,7 @@ import com.example.project.service.PlayerProfileService;
 
 @RestController
 @RequestMapping("/api/player-profiles")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"})
 public class PlayerProfileController {
 
     @Autowired
