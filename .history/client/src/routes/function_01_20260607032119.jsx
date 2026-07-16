@@ -1,1 +1,0 @@
-import  user from '../assets/user.png'
