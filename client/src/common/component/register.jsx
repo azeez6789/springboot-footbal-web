@@ -96,7 +96,8 @@ const StarryBackground = () => {
       className="fixed inset-0 pointer-events-none z-0"
     />
   );
-};
+}; // close for const StarryBackground = () => {  this tag
+
 
 export default function Register() {
   const navigate = useNavigate();

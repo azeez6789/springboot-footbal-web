@@ -141,11 +141,30 @@ export default function ParkingLandingPage() {
   return (
     <div className="min-h-screen bg-[#070A12] text-white overflow-hidden relative font-sans">
 
+      {/* ===== FULL-PAGE FOOTBALL STADIUM BACKGROUND ===== */}
+      <div
+        className="fixed inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              110deg,
+              rgba(5, 12, 30, 0.86),
+              rgba(4, 8, 18, 0.80),
+              rgba(0, 35, 29, 0.86)
+            ),
+            url('/football-stadium.jpg')
+          `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+
       {/* ===== CONNECTED STARS CANVAS BACKGROUND ===== */}
       <StarryBackground />
 
       {/* ===== BACKGROUND GLOW ===== */}
-      <div className="fixed w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full top-[-120px] left-[-120px] pointer-events-none z-0" />
+      <div className="fixed w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full top-[-120px] left-[-220px] pointer-events-none z-0" />
       <div className="fixed w-[500px] h-[500px] bg-green-400/20 blur-[160px] rounded-full bottom-[-120px] right-[-120px] pointer-events-none z-0" />
 
       {/* ===== HEADER (GLASS) ===== */}
@@ -158,26 +177,26 @@ export default function ParkingLandingPage() {
               <span className="font-bold text-xl tracking-wide">SLIIT FOOTBALL</span>
             </div>
 
-            <nav className="hidden md:flex gap-8 text-white/80 text-sm font-medium">
+            <nav className="hidden md:flex gap-8 text-white/400 text-sm font-medium">
               <a onClick={() => navigate('/')} className="hover:text-white cursor-pointer transition-colors">Home</a>
-              <a onClick={() => navigate('/pages/Regrequest')} className="hover:text-white cursor-pointer transition-colors">Request</a>
+              <a onClick={() => navigate('/pages/udash')} className="hover:text-white cursor-pointer transition-colors">Request</a>
               <a onClick={() => navigate('/pages/tournament')} className="hover:text-white cursor-pointer transition-colors">Tournaments</a>
               <a onClick={() => navigate('/pages/event')} className="hover:text-white cursor-pointer transition-colors">Events</a>
               <a onClick={() => navigate('/pages/ticket')} className="hover:text-white cursor-pointer transition-colors">Tickets</a>
-              <a onClick={() => navigate('/component/about')} className="text-blue-400 font-semibold cursor-pointer">About</a>
+              <a onClick={() => navigate('/component/about')} className="hover :text-white-400 font-semibold cursor-pointer">About</a>
             </nav>
 
             <div className="flex gap-3 text-sm font-medium">
               <button
                 onClick={() => navigate('/component/login')}
-                className="px-5 py-2 rounded-xl bg-white/10 border border-white/10 backdrop-blur hover:bg-white/20 transition-all"
+                className="px-5 py-2 rounded-xl bg-white/10 border border-white/50 backdrop-blur hover:bg-white/20 text-black transition-all"
               >
                 Log In
               </button>
 
               <button
                 onClick={() => navigate('/component/register')}
-                className="px-5 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-green-400 text-black font-semibold hover:opacity-90 transition-all"
+                className="px-5 py-2 rounded-xl bg-gradient-to-r  border border-white/50 from-blue-500 to-green-400 text-black font-semibold hover:opacity-90 transition-all"
               >
                 Get Started
               </button>
@@ -233,8 +252,10 @@ export default function ParkingLandingPage() {
         </div>
       </section>
 
+     
+
       {/* ===== SERVICES (GLASS STYLE) ===== */}
-      <section className="max-w-6xl mx-auto px-6 py-16 space-y-4 relative z-10">
+      <section className="max-w-6xl  mx-auto px-6 py-16 space-y-4 relative z-10">
         {[
           ["Live Match Updates", MapPin],
           ["Secure Data Protection", Shield],

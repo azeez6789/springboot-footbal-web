@@ -1,0 +1,21 @@
+import Homepage from "../common/pages/home";
+import Login  from "../common/component/login";
+import Register from "../common/component/register";
+import About from "../common/component/About";
+import EventPage from "../common/pages/event";
+import TicketPage from "../common/pages/ticket";
+import PlayerForm from "../common/pages/playerForm";
+
+const commonroutes = [
+    {path: "/home", element: <Homepage /> },
+    {path: "/component/login" ,  element: <Login/>  },
+    {path: "/component/register" ,  element: <Register/>  },
+    {path: "/component/about" ,  element: <About/>  },
+    {path: "/pages/event" ,  element: <EventPage/>  },
+    {path: "/pages/ticket" ,  element: <TicketPage/>  },
+    {path: "/pages/playerform" , element: <PlayerForm/>  },
+
+];
+
+
+export default commonroutes;
