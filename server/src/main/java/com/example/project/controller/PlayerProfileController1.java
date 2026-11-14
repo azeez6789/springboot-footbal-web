@@ -16,7 +16,8 @@ import java.time.LocalDate;
         "http://localhost:5173",
         "http://localhost:5174",
         "http://localhost:5175",
-        "http://localhost:5176"
+        "http://localhost:5176",
+        "https://springboot-footbal-web-98uw.vercel.app"
 })
 public class PlayerProfileController1 {
 

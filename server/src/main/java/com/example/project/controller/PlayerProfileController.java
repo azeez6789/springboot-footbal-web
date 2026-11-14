@@ -12,7 +12,13 @@ import com.example.project.service.PlayerProfileService;
 
 @RestController
 @RequestMapping("/api/player-profiles")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"})
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:5175",
+        "http://localhost:5176",
+        "https://springboot-footbal-web-98uw.vercel.app"
+})
 public class PlayerProfileController {
 
     @Autowired
@@ -32,7 +38,7 @@ public class PlayerProfileController {
             @RequestParam(value = "jerseyNumber", required = false) String jerseyNumber,
             @RequestParam(value = "bio", required = false) String bio,
             @RequestParam(value = "profilePicture", required = false) MultipartFile profilePicture) {
-        
+
         PlayerProfile profile = new PlayerProfile();
         profile.setUserId(userId);
         profile.setFullName(fullName);
@@ -40,7 +46,7 @@ public class PlayerProfileController {
         profile.setAge(age);
         profile.setJerseyNumber(jerseyNumber);
         profile.setBio(bio);
-        
+
         return playerProfileService.createPlayerProfileWithImage(profile, profilePicture);
     }
 
@@ -77,7 +83,7 @@ public class PlayerProfileController {
             @RequestParam(value = "jerseyNumber", required = false) String jerseyNumber,
             @RequestParam(value = "bio", required = false) String bio,
             @RequestParam(value = "profilePicture", required = false) MultipartFile profilePicture) {
-        
+
         PlayerProfile profileDetails = new PlayerProfile();
         profileDetails.setUserId(userId);
         profileDetails.setFullName(fullName);
@@ -85,8 +91,9 @@ public class PlayerProfileController {
         profileDetails.setAge(age);
         profileDetails.setJerseyNumber(jerseyNumber);
         profileDetails.setBio(bio);
-        
-        PlayerProfile updatedProfile = playerProfileService.updatePlayerProfileWithImage(id, profileDetails, profilePicture);
+
+        PlayerProfile updatedProfile = playerProfileService.updatePlayerProfileWithImage(id, profileDetails,
+                profilePicture);
         return ResponseEntity.ok(updatedProfile);
     }
 

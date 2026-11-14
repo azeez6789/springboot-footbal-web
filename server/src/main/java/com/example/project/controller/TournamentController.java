@@ -19,7 +19,8 @@ import com.example.project.service.TournamentService;
         "http://localhost:5173",
         "http://localhost:5174",
         "http://localhost:5175",
-        "http://localhost:5176"
+        "http://localhost:5176",
+        "https://springboot-footbal-web-98uw.vercel.app"
 })
 @RestController
 @RequestMapping("/api/tournaments")
@@ -59,7 +60,8 @@ public class TournamentController {
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                         tournament.setDate(LocalDate.parse(date, formatter));
                     } catch (DateTimeParseException e3) {
-                        throw new IllegalArgumentException("Invalid date format. Please use YYYY-MM-DD, MM/dd/yyyy, or dd/MM/yyyy");
+                        throw new IllegalArgumentException(
+                                "Invalid date format. Please use YYYY-MM-DD, MM/dd/yyyy, or dd/MM/yyyy");
                     }
                 }
             }
