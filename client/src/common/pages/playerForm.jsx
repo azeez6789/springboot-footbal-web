@@ -152,7 +152,7 @@ export default function PlayerProfileForm() {
     }
 
     try {
-      const response = await fetch("http://localhost:8081/api/player-profiles/with-image", {
+        const response = await fetch("https://springboot-footbal-web-production.up.railway.app/api/player-profiles/with-image", {
         method: "POST",
         body: dataToSend, // Fetch configures the headers automatically for FormData
       });

@@ -2,12 +2,32 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import StarryBackground from "../StarryBackground";
 import { motion } from "framer-motion";
+import "../../../../public/football-stadium.jpg"; // Ensure the image is in the public folder
+
 
 export default function AdminLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div className="h-screen w-screen bg-[#050816] text-white relative overflow-hidden flex font-sans">
+       {/* ===== FULL-PAGE FOOTBALL STADIUM BACKGROUND ===== */}
+      <div
+        className="fixed inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              110deg,
+              rgba(5, 12, 30, 0.86),
+              rgba(4, 8, 18, 0.80),
+              rgba(0, 35, 29, 0.86)
+            ),
+            url('/football-stadium.jpg')
+          `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
       <StarryBackground />
 
       {/* Ambient Moving Glow Orbs */}

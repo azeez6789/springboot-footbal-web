@@ -63,6 +63,14 @@ export default function AdminDashboard() {
     "Match result published"
   ];
 
+  const azaints = [
+    "azeez",
+    "azeez",
+    "azeez",
+    "azeez",
+    "azeez",
+  ]
+
   
         // here motion.div is used to create a container that will animate its child elements when they appear on the screen. The variants prop is used to define the animation states for the container and its children. The className prop is used to apply Tailwind CSS classes for styling the container.
 
@@ -77,12 +85,14 @@ export default function AdminDashboard() {
 
        {/* this div for big card section inside this card sectio are auto get background page color for child we want to give specific color  */} 
         <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6 ">
-            <div className="space-y-10"> {/* this is for space beetween child cars inside the big card*/}
+            <div className="space-y-10"> {/* this is for space beetween child cards inside the big card*/}
             {/* this is for inout card for inside the big card */}
             <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6 ">
             <h2 className="text-2xl font-bold text-white pt-2 pb-2">Recent Activities</h2> {/* pt mean padding top*/}
             
-            <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6  "></div>
+            <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-2  ">
+             <h2 className="text-s  text-white pt-2 pb-2">Recent Activities</h2> 
+            </div>
             
             </div>
             
@@ -97,7 +107,7 @@ export default function AdminDashboard() {
         </div>
         </div>
         {/* div className = bg color inside the card , put border  , and color , give blue effect bg , card coner , padding for arounf th card */}
-        <div className = "bg-white/5 border  border border-white/10  backdrop-blur-xl rounded-2xl  p-6"></div>
+        <div className = "bg-white/5 border  border border-white/10  backdrop-blur-xl rounded-2xl  p-6">AZEEZ</div>
       
 
         <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -119,6 +129,32 @@ export default function AdminDashboard() {
             </div>
            </motion.div>
 
+
+          <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <motion.div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-6">
+              <Activity className="text-orange-400" />
+              <h2 className="text-2xl font-bold text-white">Recent Activities</h2>
+            </div>
+            <div className="space-y-3">
+              {azaints.map((item, index) => (
+                <div key={index} className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl p-4">
+                  <div className="flex items-center gap-3">
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+                    <p className="text-white/80 text-sm">{item}</p>
+                  </div>
+                  <span className="text-xs text-white/50">Today</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+       </motion.div>
+       {/* with motion div have some animation parts like  appear in vibrate mode */}
+
+          <motion.div>
+            <div className = "bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6">
+           </div>
+           </motion.div>
 
           <motion.div
              className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6">

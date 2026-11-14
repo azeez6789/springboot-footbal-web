@@ -62,7 +62,7 @@ if (paymentReceipt) {
 
     //  this statement can be used as different files 
     const response = await fetch(
-      "http://localhost:8081/api/player-profiles1",
+      "https://springboot-footbal-web-production.up.railway.app/api/player-profiles1",
       {
         method: "POST",
         body: data,

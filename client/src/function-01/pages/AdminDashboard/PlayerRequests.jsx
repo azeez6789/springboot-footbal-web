@@ -102,7 +102,7 @@ export default function PlayerRequest() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8081/api/player-profiles")
+    fetch("https://springboot-footbal-web-production.up.railway.app/api/player-profiles")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch player profiles");
