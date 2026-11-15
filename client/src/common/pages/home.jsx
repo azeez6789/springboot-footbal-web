@@ -3,6 +3,7 @@ import { Car, MapPin, Clock, Shield, Users, ChevronRight, ChevronDown, Star, Men
 import Logo from '../assets/opt3.png';
 import { useNavigate } from 'react-router-dom';
 import { createPlayerProfileWithImage, getAllUsers } from '../services/userService';
+import StarryBackground from '../../function-01/component/StarryBackground';
 
 export default function ParkingLandingPage() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -111,10 +112,13 @@ export default function ParkingLandingPage() {
   return (
     <div className="min-h-screen bg-[#070A12] text-white overflow-hidden relative">
 
+      <StarryBackground />
+
       {/* ===== BACKGROUND GLOW ===== */}
       <div className="absolute w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full top-[-120px] left-[-120px]" />
       <div className="absolute w-[500px] h-[500px] bg-green-400/20 blur-[160px] rounded-full bottom-[-120px] right-[-120px]" />
 
+      <div className="relative z-10">
       {/* ===== HEADER ===== */}
       <header className="sticky top-0 z-50 bg-white/5 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6">
@@ -414,6 +418,7 @@ export default function ParkingLandingPage() {
       <footer className="text-center py-10 border-t border-white/10 bg-white/5 backdrop-blur-xl">
         <p className="text-white/60">© 2026 SLIIT Football</p>
       </footer>
+      </div>
 
       {/* ===== PROFILE FORM MODAL ===== */}
       {showProfileForm && (

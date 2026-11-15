@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { User, Shield, Calendar, Hash, FileText, Upload, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../common/assets/opt3.png";
+import { API_BASE_URL } from "../services/api";
 
 // Interactive Particle Constellation Canvas Component
 const StarryBackground = () => {
@@ -152,7 +153,7 @@ export default function PlayerProfileForm() {
     }
 
     try {
-        const response = await fetch("https://springboot-footbal-web-production.up.railway.app/api/player-profiles/with-image", {
+        const response = await fetch(`${API_BASE_URL}/player-profiles/with-image`, {
         method: "POST",
         body: dataToSend, // Fetch configures the headers automatically for FormData
       });

@@ -1,11 +1,7 @@
-import axios from "axios";
-
-const API = axios.create({
-   baseURL: "https://springboot-footbal-web-production.up.railway.app/api",
-});
+import api from "../../common/services/api";
 
 export const createTournament = (formData) => {
-    return API.post("/tournaments", formData, {
+    return api.post("/tournaments", formData, {
         headers: {
             "Content-Type": "multipart/form-data",
         },
@@ -14,15 +10,15 @@ export const createTournament = (formData) => {
 
 // GET
 export const getAllTournaments=()=>{
-    return API.get("/tournaments");
+    return api.get("/tournaments");
 };
 
 // DELETE
 export const deleteTournament=(id)=>{
-    return API.delete(`/tournaments/${id}`);
+    return api.delete(`/tournaments/${id}`);
 };
 
 // UPDATE
 export const updateTournament=(id,data)=>{
-    return API.put(`/tournaments/${id}`,data);
+    return api.put(`/tournaments/${id}`,data);
 };

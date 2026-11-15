@@ -2,6 +2,8 @@
   import { User, Shield, Calendar, Circle, Mail, CalendarDays, ShieldCheck, Upload, ArrowLeft } from "lucide-react";
   import {useNavigate} from "react-router-dom";
   import Logo from "../../../common/assets/opt3.png";
+  import StarryBackground from "../StarryBackground";
+  import { API_BASE_URL } from "../../../common/services/api";
 
 
 export default function PlayerProfileForm() {
@@ -62,7 +64,7 @@ if (paymentReceipt) {
 
     //  this statement can be used as different files 
     const response = await fetch(
-      "https://springboot-footbal-web-production.up.railway.app/api/player-profiles1",
+      `${API_BASE_URL}/player-profiles1`,
       {
         method: "POST",
         body: data,
@@ -103,7 +105,7 @@ if (paymentReceipt) {
     
 return (
       <div className="min-h-screen bg-[#0b1220] text-white selection:bg-blue-500/30 relative overflow-hidden flex flex-col justify-between font-sans">
-        
+        <StarryBackground />
 
         <div className="fixed w-[600px] h-[600px] bg-blue-500/10 blur-[160px] rounded-full top-[-200px] left-[-200px] pointer-events-none z-0" />
         <div className="fixed w-[600px] h-[600px] bg-green-400/10 blur-[180px] rounded-full bottom-[-200px] right-[-200px] pointer-events-none z-0" />

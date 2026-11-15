@@ -3,6 +3,7 @@ import { User, Check, X, Eye, Search } from "lucide-react";
 import Logo from "../../../common/assets/opt3.png";
 import { useNavigate } from "react-router-dom";
 import AdminLayout from "../../component/AdminDashboard/AdminLayout";
+import { API_BASE_URL } from "../../../common/services/api";
 
 // Interactive Particle Constellation Canvas Component
 const StarryBackground = () => {
@@ -102,7 +103,7 @@ export default function PlayerRequest() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("https://springboot-footbal-web-production.up.railway.app/api/player-profiles")
+    fetch(`${API_BASE_URL}/player-profiles`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch player profiles");
