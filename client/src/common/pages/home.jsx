@@ -195,7 +195,7 @@ export default function ParkingLandingPage() {
       {/* ===== HERO IMAGE ===== */}
       <section className="max-w-6xl mx-auto px-6 py-10">
         <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-8 flex flex-col md:flex-row items-center gap-10">
-          <img src="/public/chat1.png" className="w-96 rounded-xl" alt="SLIIT Football" />
+          <img src="/chat1.png" className="w-96 rounded-xl" alt="SLIIT Football" />
           <div>
             <h2 className="text-3xl font-bold mb-4">10+ Years of Excellence</h2>
             <p className="text-white/70">
